@@ -9,16 +9,16 @@ public class Test {
         Rectangle rect2 = new Rectangle(50, 30, 150, 20);
         Circle circle1 = new Circle(40, 300, 300);
         Image img1 = new Image(200, 200, "C:\\Users\\dfium\\Downloads\\Immagine4.png");
-        canvas.add(rect1);
-        canvas.add(rect2);
-        canvas.add(circle1);
-        canvas.add(img1);
-
+        //canvas.add(rect2);
+        //canvas.add(img1);
+        Shape group = new CompositeShape();
+        group.add(rect1);
+        group.add(circle1);
+        canvas.add(group);
         // Simulate drawing the canvas (in a real application, this would be done in a GUI)
         JFrame frame = new JFrame();
         frame.setSize(800, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
         JPanel panel = new JPanel() {
             @Override
             protected void paintComponent(java.awt.Graphics g) {
@@ -27,6 +27,7 @@ public class Test {
             }
         };
         frame.setContentPane(panel);
+        frame.setVisible(true);
         
     }
 }
