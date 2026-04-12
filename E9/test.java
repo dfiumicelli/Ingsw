@@ -21,6 +21,9 @@ public class test {
 		Parser p1 = new HTMLParser();
 		System.out.println("EXPORT: "+doc.acceptParser(p1));
 		System.out.println(doc.getStatus().toString()+", can be closed: "+doc.canClose());
+        Parser p2 = new PlainTextParser();
+        System.out.println("EXPORT: "+doc.acceptParser(p2));
+        System.out.println(doc.getStatus().toString()+", can be closed: "+doc.canClose());
 	}
 
 }
